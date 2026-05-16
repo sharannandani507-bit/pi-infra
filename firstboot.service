@@ -1,0 +1,12 @@
+[Unit]
+Description=Pi Provisioning
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/bootstrap/firstboot.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
