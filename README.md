@@ -44,3 +44,24 @@ PHASE 9 — Make firstboot Executable
 On Linux/macOS:
 
 chmod +x firstboot.sh
+
+
+PHASE 11 — Copy Files Into SD Card
+
+Copy into SD:
+
+/opt/bootstrap/
+├── config.env
+├── firstboot.sh
+└── firstboot.service
+
+
+PHASE 12 — Enable Service BEFORE Boot
+
+Now mount Linux filesystem.
+
+If on Linux:
+
+sudo cp firstboot.service /etc/systemd/system/
+
+sudo systemctl enable firstboot.service
